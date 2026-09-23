@@ -1,0 +1,21 @@
+{
+  "name": "micro-frontend-common",
+  "private": true,
+  "version": "1.0.0",
+  "description": "範例：Host 以 Module Federation 載入獨立 Common remote，同 DOM 掛載",
+  "scripts": {
+    "dev": "concurrently -n common,host -c magenta,blue \"npm run dev:remote\" \"npm run dev:host\"",
+    "dev:remote": "npm run build -w common && concurrently -n build,serve -c gray,magenta \"npm run build:watch -w common\" \"npm run preview -w common\"",
+    "dev:host": "wait-on http://localhost:5184/assets/remoteEntry.js && npm run dev -w host",
+    "build": "npm run build -w common && npm run build -w host",
+    "preview": "concurrently -n common,host -c magenta,blue \"npm run preview -w common\" \"npm run preview -w host\""
+  },
+  "workspaces": [
+    "host",
+    "common"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "wait-on": "^8.0.2"
+  }
+}

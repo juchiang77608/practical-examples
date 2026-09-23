@@ -1,0 +1,161 @@
+.mfe-common {
+  --mfe-bg: #f4f6f8;
+  --mfe-card: #ffffff;
+  --mfe-border: #d5dde5;
+  --mfe-text: #1b2430;
+  --mfe-muted: #5c6b7a;
+  --mfe-accent: #0b6bcb;
+  --mfe-accent-soft: #e7f1fb;
+  --mfe-danger: #c62828;
+  --mfe-font: "Source Sans 3", "Segoe UI", sans-serif;
+  --mfe-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  box-sizing: border-box;
+  font-family: var(--mfe-font);
+  color: var(--mfe-text);
+  background:
+    linear-gradient(180deg, #e8eef4 0%, var(--mfe-bg) 40%),
+    var(--mfe-bg);
+  min-height: 100%;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.mfe-common *,
+.mfe-common *::before,
+.mfe-common *::after {
+  box-sizing: border-box;
+}
+
+.mfe-common .mfe-inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.mfe-common .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--mfe-accent-soft);
+  color: var(--mfe-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.mfe-common .card {
+  margin-top: 1rem;
+  padding: 1.35rem 1.25rem;
+  background: var(--mfe-card);
+  border: 1px solid var(--mfe-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(27, 36, 48, 0.06);
+}
+
+.mfe-common .card h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.mfe-common .lead {
+  margin: 0 0 1.1rem;
+  color: var(--mfe-muted);
+  line-height: 1.45;
+}
+
+.mfe-common .kv {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1.1rem;
+  padding: 0.75rem 0.85rem;
+  background: #f7f9fb;
+  border-radius: 8px;
+  font-family: var(--mfe-mono);
+  font-size: 0.78rem;
+  color: var(--mfe-muted);
+}
+
+.mfe-common .kv strong {
+  color: var(--mfe-text);
+  font-weight: 500;
+}
+
+.mfe-common label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.mfe-common input {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--mfe-border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mfe-common input:focus {
+  outline: 2px solid color-mix(in srgb, var(--mfe-accent) 35%, white);
+  border-color: var(--mfe-accent);
+}
+
+.mfe-common .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.mfe-common button {
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.mfe-common button.primary {
+  background: var(--mfe-accent);
+  color: #fff;
+}
+
+.mfe-common button.ghost {
+  background: transparent;
+  border: 1px solid var(--mfe-border);
+  color: var(--mfe-text);
+}
+
+.mfe-common button.danger {
+  background: transparent;
+  border: 1px solid #f0c2c2;
+  color: var(--mfe-danger);
+}
+
+.mfe-common .hint {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--mfe-muted);
+  line-height: 1.4;
+}
+
+.mfe-common .canvas-wrap {
+  border: 1px dashed var(--mfe-border);
+  border-radius: 8px;
+  background: #fafbfc;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.mfe-common canvas {
+  display: block;
+  width: 100%;
+  height: 140px;
+  touch-action: none;
+  cursor: crosshair;
+}
